@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- simpel.html -->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AOSJokes</title>
+    <link rel="stylesheet" href="server.css" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="client.js" defer></script>
+    <script src="get.js" defer></script>
+    <script src="getText.js" defer></script>
+</head>
+
+<body>
+    <h1>Velkommen til Joke Dealeren</h1>
+    <table id="outherTable">
+        <tbody>
+            <tr id="headers">
+                <th>
+                    <h2>Tell a joke</h2>
+                </th>
+                <th id="headerTwo">
+                    <h2>Jokes</h2>
+                </th>
+                <th>
+                    <h2>Read jokes from other sites</h2>
+                </th>
+            </tr>
+            <tr id="contents">
+                <td id="tdOne">
+                    <table id="createJokeTable">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input id="setupField" type="text" placeholder="Setup">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input id="punchlineField" type="text" placeholder="Punchline">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <button id="createJokeBtn">Opret joke</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+                <td id="tdTwo">
+                    <table id="jokesTable">
+                    </table>
+                </td>
+                <td id="tdThree">
+                    <select id="siteSelector">
+
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

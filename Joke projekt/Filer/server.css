@@ -1,0 +1,73 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+html {
+    background-color: lightgrey;
+}
+
+h1 {
+    text-align: center;
+}
+
+#outherTable {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
+#headers{
+    background-color: #89b0ae;
+    width: 30%;
+    text-align: center;
+}
+
+#headers > th{
+    min-width: 400px;
+}
+
+#contents {
+    background-color: #bee3db;
+    width: 30%;
+    height: 550px;
+    min-width: 250px;
+    padding-top: 10px;
+    text-align: center;
+    vertical-align: top
+}
+
+/*create jokes*/
+#setupField, #punchlineField {
+    width: 250px;
+}
+
+#createJokeBtn {
+    width: 259px;
+}
+
+#createJokeTable {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*jokes*/
+#jokesTable{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*other sites*/
+#tdOtherSites {
+    vertical-align: top;
+    text-align: center;
+}
+
+select {
+    /* margin-left: auto;
+    margin-right: auto; */
+    text-align: center;
+    height: 30px;
+    width: 250px;
+}
