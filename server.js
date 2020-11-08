@@ -16,7 +16,7 @@ const Joke = mongoose.model('Joke', new mongoose.Schema({
 }));
 
 
-app.use(express.static(__dirname + "/Joke projekt/Filer"));
+app.use(express.static(__dirname + "/Joke projekt/public"));
 app.get("/", async(request, response) => {
     response.sendFile(__dirname + "/Joke projekt/Filer/index.html")
 });
