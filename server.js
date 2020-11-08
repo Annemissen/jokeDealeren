@@ -10,7 +10,7 @@ app.use(cors());
 
 const port = process.env.PORT || config.localPort; // Heroku
 app.listen(port);
-console.log('Listening on port ' + port + ' ...');
+console.log('Listening on port ' + port + ' ....');
 
 mongoose.connect(config.databaseURI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "jokeDB" });
 // 'mongodb+srv://stef6593:AnnemieogSteffen@cluster0.diqi4.mongodb.net/jokeDB?retryWrites=true&w=majority'
