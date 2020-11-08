@@ -2,13 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors')
 const fetch = require('node-fetch');
+const config = require('./config');
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.listen(8080);
 
-mongoose.connect('mongodb+srv://stef6593:AnnemieogSteffen@cluster0.diqi4.mongodb.net/jokeDB?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true, dbName: "jokeDB" });
+const port = process.env.PORT || config.localPort; // Heroku
+app.listen(port);
+console.log('Listening on port ' + port + ' ...');
+
+mongoose.connect(config.databaseURI, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "jokeDB" });
+// 'mongodb+srv://stef6593:AnnemieogSteffen@cluster0.diqi4.mongodb.net/jokeDB?retryWrites=true&w=majority'
 
 const Joke = mongoose.model('Joke', new mongoose.Schema({
     setup: String,
@@ -77,16 +82,12 @@ app.post('/api/jokes', async(request, response) => {
 })
 
 
-//Til testing
-async function initTestBesked(setup, punchline) {
-    let joke = {
-        setup,
-        punchline
-    };
-    let jokeToPrint = await Joke.create(joke);
-    console.log(jokeToPrint);
-}
-
-console.log("Lytter på port 8080....");
-
-//initTestBesked("Who is there?", "Its me Mario!")
+//Metode til at oprettte database testdata 
+// async function initTestBesked(setup, punchline) {
+//     let joke = {
+//         setup,
+//         punchline
+//     };
+//     let jokeToPrint = await Joke.create(joke);
+//     console.log(jokeToPrint);
+// }
